@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { StyleSheet, Text, View, Dimensions, FlatList } from "react-native";
 import keys from "./keys.json";
-import data from "./data.json";
+// import data from "./data.json";
 import ActivityIndicator from "./components/ActivityIndicator";
 import Image from "./components/Image";
 
@@ -19,17 +19,12 @@ export default function App() {
       await fetch(getRandomPhotoUrl, { headers: header })
         .then((res) => res.json())
         .then((data) => {
-          // console.log(data);
           setImages(data);
           setIsLoading(false);
         });
     } catch (error) {
       console.log(error);
     }
-    // await setTimeout(() => {
-    //   setImages(data);
-    //   setIsLoading(false);
-    // }, 2000);
   };
 
   useEffect(() => {
@@ -41,9 +36,6 @@ export default function App() {
     fetchImages();
   };
 
-  // const Item = ({item}) => console.log(item.urls);
-
-  // console.log(isLoading);
   return (
     <View style={styles.container}>
       {isLoading ? (
