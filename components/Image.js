@@ -1,11 +1,16 @@
 import React from "react";
-import { Image, TouchableWithoutFeedback, Dimensions, View } from "react-native";
+import {
+  Image,
+  TouchableWithoutFeedback,
+  Dimensions,
+  View,
+} from "react-native";
 import ActivityIndicator from "./ActivityIndicator";
 
 const ImageItem = (props) => {
-//   const { url } = props;
-const {urls, title} = props.data.item; 
-  console.log("this is image data ", props.data.urls);
+  //   const { url } = props;
+  const { urls, title } = props.data.item;
+
   const { height, width } = Dimensions.get("screen");
 
   return (
